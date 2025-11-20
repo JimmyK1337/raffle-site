@@ -1,92 +1,43 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import TopBanner from "../components/layout/TopBanner";
+import FeaturedGiveaways from "../components/giveaway/FeaturedGiveaways";
+import AnimatedButton from "../components/layout/AnimatedButton";
 
 export default function Home() {
   return (
-    <div>
-
-      {/* Sleek Banner at Top */}
+    <div className="min-h-screen bg-gradient-to-br from-gray-100 to-gray-200">
       <TopBanner />
 
-      {/* Main Hero Section */}
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          justifyContent: "center",
-          minHeight: "90vh",
-          fontFamily: "'Comic Sans MS', cursive, sans-serif",
-          background: "linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%)",
-          color: "#fff",
-          padding: "2rem",
-          textAlign: "center",
-        }}
-      >
-        <h1
-          style={{
-            fontSize: "5rem",
-            fontWeight: "bold",
-            marginBottom: "1rem",
-            letterSpacing: "3px",
-            textShadow: "2px 2px #ff6a95",
-          }}
-        >
-          RaffleDex 🎉
-        </h1>
+      {/* Hero Section */}
+      <div className="relative pt-24 pb-32 text-center">
+        <div className="max-w-3xl mx-auto px-6">
+          <h1 className="text-5xl md:text-6xl font-extrabold text-gray-900 mb-6 animate-fadeInDown">
+            Win Big. Win Often.
+          </h1>
+          <p className="text-lg md:text-xl text-gray-700 mb-8 animate-fadeIn">
+            Join raffles for gaming gear, consoles, Pokémon cards, and more — all in one place.
+          </p>
+          <div className="flex justify-center gap-4">
+            <Link to="/raffles">
+              <AnimatedButton>View Giveaways</AnimatedButton>
+            </Link>
+            <Link to="/login">
+              <AnimatedButton>Get Started</AnimatedButton>
+            </Link>
+          </div>
+        </div>
 
-        <p
-          style={{
-            fontSize: "1.5rem",
-            color: "#fff",
-            marginBottom: "2rem",
-            maxWidth: "700px",
-            textShadow: "1px 1px #ff6a95",
-          }}
-        >
-          Welcome to RaffleDex! Your one-stop fun zone for raffles and prizes.
-          Start exploring and grab your lucky ticket!
-        </p>
-
-        <div style={{ display: "flex", gap: "1rem" }}>
-          <Link
-            to="/login"
-            style={{
-              padding: "1rem 2rem",
-              background: "linear-gradient(45deg, #ff6a95, #ffb347)",
-              color: "#fff",
-              textDecoration: "none",
-              borderRadius: "12px",
-              fontWeight: "bold",
-              boxShadow: "0 5px 15px rgba(0,0,0,0.3)",
-              transition: "transform 0.2s",
-            }}
-            onMouseOver={(e) => (e.currentTarget.style.transform = "scale(1.05)")}
-            onMouseOut={(e) => (e.currentTarget.style.transform = "scale(1)")}
-          >
-            Login
-          </Link>
-
-          <Link
-            to="/register"
-            style={{
-              padding: "1rem 2rem",
-              background: "linear-gradient(45deg, #6a11cb, #2575fc)",
-              color: "#fff",
-              textDecoration: "none",
-              borderRadius: "12px",
-              fontWeight: "bold",
-              boxShadow: "0 5px 15px rgba(0,0,0,0.3)",
-              transition: "transform 0.2s",
-            }}
-            onMouseOver={(e) => (e.currentTarget.style.transform = "scale(1.05)")}
-            onMouseOut={(e) => (e.currentTarget.style.transform = "scale(1)")}
-          >
-            Register
-          </Link>
+        {/* Animated background / decorative gaming style shapes */}
+        <div className="absolute inset-0 -z-10 overflow-hidden">
+          <div className="absolute top-0 left-1/4 w-72 h-72 bg-indigo-400 opacity-30 rounded-full mix-blend-multiply animate-blob"></div>
+          <div className="absolute top-10 right-1/3 w-80 h-80 bg-blue-400 opacity-30 rounded-full mix-blend-multiply animate-blob animation-delay-2000"></div>
+          <div className="absolute bottom-0 left-1/3 w-96 h-96 bg-purple-400 opacity-30 rounded-full mix-blend-multiply animate-blob animation-delay-4000"></div>
         </div>
       </div>
+
+      {/* Featured Giveaways */}
+      <FeaturedGiveaways />
     </div>
   );
 }
