@@ -10,47 +10,51 @@ export default function Home() {
         alignItems: "center",
         justifyContent: "center",
         minHeight: "100vh",
-        fontFamily: "Arial, sans-serif",
-        backgroundColor: "#f5f5f5",
-        color: "#333",
+        fontFamily: "'Comic Sans MS', cursive, sans-serif",
+        background: "linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%)",
+        color: "#fff",
         padding: "2rem",
         textAlign: "center",
       }}
     >
       <h1
         style={{
-          fontSize: "4rem",
+          fontSize: "5rem",
           fontWeight: "bold",
           marginBottom: "1rem",
-          letterSpacing: "2px",
+          letterSpacing: "3px",
+          textShadow: "2px 2px #ff6a95",
         }}
       >
-        RaffleDex
+        RaffleDex 🎉
       </h1>
       <p
         style={{
-          fontSize: "1.2rem",
-          color: "#666",
-          maxWidth: "600px",
+          fontSize: "1.5rem",
+          color: "#fff",
           marginBottom: "2rem",
+          maxWidth: "700px",
+          textShadow: "1px 1px #ff6a95",
         }}
       >
-        Welcome! This is a minimalistic placeholder Home page for your raffle
-        website. You can start designing your raffles here.
+        Welcome to RaffleDex! Your one-stop fun zone for raffles and prizes. Start exploring and grab your lucky ticket!
       </p>
 
-      {/* Buttons */}
       <div style={{ display: "flex", gap: "1rem" }}>
         <Link
           to="/login"
           style={{
-            padding: "0.8rem 1.5rem",
-            backgroundColor: "#333",
+            padding: "1rem 2rem",
+            background: "linear-gradient(45deg, #ff6a95, #ffb347)",
             color: "#fff",
             textDecoration: "none",
-            borderRadius: "5px",
+            borderRadius: "12px",
             fontWeight: "bold",
+            boxShadow: "0 5px 15px rgba(0,0,0,0.3)",
+            transition: "transform 0.2s",
           }}
+          onMouseOver={(e) => (e.currentTarget.style.transform = "scale(1.05)")}
+          onMouseOut={(e) => (e.currentTarget.style.transform = "scale(1)")}
         >
           Login
         </Link>
@@ -58,14 +62,17 @@ export default function Home() {
         <Link
           to="/register"
           style={{
-            padding: "0.8rem 1.5rem",
-            backgroundColor: "#fff",
-            color: "#333",
-            border: "2px solid #333",
+            padding: "1rem 2rem",
+            background: "linear-gradient(45deg, #6a11cb, #2575fc)",
+            color: "#fff",
             textDecoration: "none",
-            borderRadius: "5px",
+            borderRadius: "12px",
             fontWeight: "bold",
+            boxShadow: "0 5px 15px rgba(0,0,0,0.3)",
+            transition: "transform 0.2s",
           }}
+          onMouseOver={(e) => (e.currentTarget.style.transform = "scale(1.05)")}
+          onMouseOut={(e) => (e.currentTarget.style.transform = "scale(1)")}
         >
           Register
         </Link>
