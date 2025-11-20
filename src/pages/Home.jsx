@@ -11,7 +11,7 @@ export default function Home() {
         minHeight: "100vh",
         fontFamily: "Arial, sans-serif",
         backgroundColor: "#f5f5f5",
-        color: "#333",
+        color: "blue", // <-- changed text color to blue
         padding: "2rem",
         textAlign: "center",
       }}
@@ -22,6 +22,7 @@ export default function Home() {
           fontWeight: "bold",
           marginBottom: "1rem",
           letterSpacing: "2px",
+          color: "blue", // <-- ensure header is blue
         }}
       >
         RaffleDex
@@ -29,7 +30,7 @@ export default function Home() {
       <p
         style={{
           fontSize: "1.2rem",
-          color: "#666",
+          color: "blue", // <-- changed paragraph text to blue
           maxWidth: "600px",
         }}
       >
