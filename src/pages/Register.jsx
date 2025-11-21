@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { auth } from "../firebase/firebaseConfig";
+import { createUserDocument } from "../firebase/users";
 import { Link, useNavigate } from "react-router-dom";
 
 export default function Register() {
@@ -16,9 +17,16 @@ export default function Register() {
     setLoading(true);
 
     try {
-      const user = await createUserWithEmailAndPassword(auth, email, password);
+      const { user: authUser } = await createUserWithEmailAndPassword(
+        auth,
+        email,
+        password
+      );
 
-      await updateProfile(user.user, { displayName });
+      await updateProfile(authUser, { displayName });
+
+      // Create user document in Firestore
+      await createUserDocument(authUser, { displayName });
 
       navigate("/account");
     } catch (err) {
