@@ -5,10 +5,15 @@ import "./index.css";
 
 import ToastProvider from "./context/ToastContext.jsx";
 import ToastContainer from "./components/ui/ToastContainer.jsx";
+import { CartProvider } from "./context/CartContext.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <ToastProvider>
-    <App />
-    <ToastContainer />
-  </ToastProvider>
+  <React.StrictMode>
+    <ToastProvider>
+      <CartProvider>
+        <App />
+        <ToastContainer />
+      </CartProvider>
+    </ToastProvider>
+  </React.StrictMode>
 );
